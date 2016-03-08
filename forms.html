@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Document name goes here</title>
+	</head>
+	<body>
+		<!--  -->
+		<form action="http://www.example.com/test.asp" method="post/get">
+			<label for="lastname">Name:</label>
+			<input type="text" name="lastname" id="lastname" value="Nixon" size="20" maxlength="30">
+			<label for="lastname">Password:</label>
+			<input type="password"></br>
+
+			<label for="hoboy">兴趣爱好：</label>
+			<input type="checkbox" name="hoboy" checked="checked">music
+			<input type="checkbox" name="hoboy">swim
+			<input type="checkbox" name="hoboy">dance
+			</br>
+
+			<label for="sex">性别：</label>
+			<input type="radio" name="sex" value="male" checked="checked">male
+			<input type="radio" name="sex" value="female">female</br>
+
+
+			<!-- 选择列表 -->
+			<p>简单的选择列表</p>
+			<select>
+				<option>Apples
+				<option selected="selected">Bananas
+				<option>Cherries
+			</select></br>
+
+			<!-- 带 选项组 的选择列表 -->
+			<p> 带选项组的选择列表</p>
+			<select>
+			  	<optgroup label="Swedish Cars">
+			    	<option value ="volvo">Volvo</option>
+			    	<option value ="saab">Saab</option>
+			  	</optgroup>
+
+			 	<optgroup label="German Cars">
+			    	<option value ="mercedes">Mercedes</option>
+			    	<option value ="audi">Audi</option>
+			 	</optgroup>
+			</select></br>
+
+			<p> 多文本输入框 </p>
+			<textarea name="Comment" rows="10" cols="30"></textarea></br>
+
+			<input type="submit">
+			<input type="reset">
+			<input type="hidden">
+		</form>
+		
+		<!-- 带边框的表单 -->
+		<form action="http://www.example.com/test.asp" method="post/get">
+		   	<fieldset>
+			    <legend>health information</legend>
+			    height: <input type="text" />
+			    weight: <input type="text" />
+		  	</fieldset>
+		</form>
+	</body>
+</html>

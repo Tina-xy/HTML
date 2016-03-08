@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Document name goes here</title>
+	</head>
+	<body>
+
+		<!-- 关于img的图像映射 -->
+		<!-- usemap 属性:将图像定义为客户端图像映射; 与 <map> 元素的 name 或 id 相关联，以建立 <img> 与 <map> 之间的关系。 -->
+		<!-- <area> 标签定义图像映射中的区域（注：图像映射指得是带有可点击区域的图像） -->
+		<img src="http://scimg.jb51.net/allimg/150624/11-1506241135512L.jpg" alt="Animal"  usemap="#animalmap" width="200"  height="200"/>
+		<map name="animalmap" id="animalmap">
+			<area shape="rect" coords="0,0,200,200" href="http://www.w3school.com.cn/" target="_blank" alt="animal" />
+		</map></br></br> 
+
+
+		<img src="/i/eg_planets.jpg" border="0" usemap="#planetmap" alt="Planets" />
+	　　<map name="planetmap" id="planetmap">
+	　　　　<area shape="circle" coords="180,139,14" href ="/example/html/venus.html" target ="_blank" alt="Venus" />
+	　　　　<area shape="circle" coords="129,161,10" href ="/example/html/mercur.html" target ="_blank" alt="Mercury" />
+	　　　　<area shape="rect" coords="0,0,110,260" href ="/example/html/sun.html" target ="_blank"  alt="Sun" />
+	　　</map>
+
+
+		<!-- This is a Link (新窗口打开)-->
+		<a href="http://www.w3school.com.cn/" target="_blank">This is a Link</a></br></br>
+
+		<!-- 将图片作为链接 -->
+		<a href="http://www.w3school.com.cn/">
+			<img src="http://img4.3lian.com/sucai/img6/230/29.jpg" alt="Alternate Text">
+		</a></br>
+
+		<!--name属性：规定anchor（锚）的名称，即创建html页面中的书签 -->
+		<!-- 使用命名锚（named anchors）时，我们可以创建直接跳至该命名锚（比如页面中某个小节）的链接，这样可以避免使用者不停地滚动页面来寻找他们需要的信息 -->
+
+		<a href= "#tips">useful tips</a></br>  
+		<img src="http://img4.3lian.com/sucai/img6/230/29.jpg" alt="Alternate Text"></br>
+
+		<a name="tips">Here is a useful tips</a></br> <!-- 可以使用 id 属性来替代 name 属性，命名锚同样有效 -->
+
+		<!-- 可以在其他页面中创建 直接 指向该锚的链接：将 # 符号和锚名称添加到 URL 的末端，如 <a href="*****#tips">useful tips</a> -->
+
+
+		
+
+	</body>
+</html>
