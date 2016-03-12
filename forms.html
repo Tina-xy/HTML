@@ -12,15 +12,35 @@
 			<label for="lastname">Password:</label>
 			<input type="password"></br>
 
-			<label for="hoboy">兴趣爱好：</label>
+			
 			<input type="checkbox" name="hoboy" checked="checked">music
 			<input type="checkbox" name="hoboy">swim
 			<input type="checkbox" name="hoboy">dance
 			</br>
 
-			<label for="sex">性别：</label>
-			<input type="radio" name="sex" value="male" checked="checked">male
-			<input type="radio" name="sex" value="female">female</br>
+			<p>性别：
+			<input type="radio" name="sex" id="male" value="male"><label for="male">male</label>
+			<input type="radio" name="sex" id="female" value="female"><label for="female">female</label></p> </br>
+
+			<!-- 注意 label标签怎么绑定 checkbox 和 radio  （注： for属性只能和id属性绑定，而不是 name）-->
+			<!-- 方式1：常用 -->
+			<p>选项：
+			<input type="radio" id="radioA" name="radio1" /><label for="radioA">选项A</label>
+			<input type="radio" id="radioB" name="radio1" /><label for="radioB">选项B</label></p> </br>
+			<!-- 方式2 -->
+			<label><input type="radio"  name="radio2">这是radioA</label>
+			<label><input type="radio"  name="radio2">这是radioB</label>
+
+			<!-- 复选框实例 -->
+
+			<p>重复时间：</p>
+			<input type="checkbox" name="time" id="Sunday" value="星期日"><label for="Sunday">日</label>
+			<input type="checkbox" name="time" id="Monday" value="星期一"><label for="Monday">一</label>
+			<input type="checkbox" name="time" id="Tuesday" value="星期二"><label for="Tuesday">二</label>
+			<input type="checkbox" name="time" id="Wednesday" value="星期三"><label for="Wednesday">三</label>
+			<input type="checkbox" name="time" id="Thursday" value="星期四"><label for="Thursday">四</label>
+			<input type="checkbox" name="time" id="Friday" value="星期五"><label for="Friday">五</label>
+			<input type="checkbox" name="time" id="Saturday" value="星期六"><label for="Saturday">六</label>
 
 
 			<!-- 选择列表 -->
@@ -63,3 +83,5 @@
 		</form>
 	</body>
 </html>
+
+

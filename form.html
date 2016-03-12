@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	</head>
+	<body>
+		<form name="MyForm" action="URL" method="post">
+			<!-- 单选框 -->
+		　　 <p>性别：
+		　　 	<input type="radio" name="sex" id="male" value="male"><label for="male">male</label>
+		　　 	<input type="radio" name="sex" id="female" value="female"><label for="female">female</label>
+		　　 </p>
+		　　<input type="button" value="获取选中项" onclick="getValue();" /></br>
+
+			<!-- 复选框 -->
+			<input type="checkbox" name="hoboy" id="music" value="music"><label for="music">music</label>
+			<input type="checkbox" name="hoboy" id="swim" value="swim"><label for="swim">swim</label>
+			<input type="checkbox" name="hoboy" id="dance" value="dance"><label for="dance">dance</label></br>
+			<input type="button" value="全选" onclick="selectBoxs(1);" />
+			<input type="button" value="全不选" onclick="selectBoxs(0);" />
+			<input type="button" value="反选" onclick="selectBoxs(-1);" />
+			<input type="button" value="提交" onclick="getSelect();" />
+
+			<!-- 选择列表 -->
+			<!--size可以控制整个选项框的大小。size="3",即框内就是可以显示三个可选元素的大小区域。-->
+			<p>简单的选择列表</p>
+			<select id="myselect" name="myselect" multiple="multiple" size="3">
+				<option value="Apples">Apples</option>
+				<option value="Bananas">Bananas</option>
+				<option value="Cherries">Cherries</option>
+				<option value="oranges">oranges</option>
+			</select></br>
+			<input type="button" onclick="getSelectValue('myselect')" value="查看选项" />
+
+		</form>
+	</body>
+
+
+	<script language="javascript">
+	//获取选中的单选值
+	function getValue(){
+	    //获取表单的所有提交信息（根据表单的name属性）
+	    var  myform = document.forms["MyForm"];
+	    //sex是单选按钮的name属性值
+	    var radioChoices = myform.sex;
+	    //遍历整个单选项表
+	    for(i=0;i<radioChoices.length;i++)   
+	        if(radioChoices[i].checked)   
+	            break; //发现了被选中项,退出
+	    alert("选中的选项是："+radioChoices[i].value);
+	}
+
+	//全选，全部选，反选
+	function selectBoxs(value){
+	    var myform = document.forms["MyForm"];
+	    //hoboy 为所有复选框的name属性值
+	    var CheckboxChoices = myform.hoboy;
+	 
+	    for(var i=0;i<CheckboxChoices.length;i++)    //遍历每一个选项
+	        if(value < 0)//反选
+	            CheckboxChoices[i].checked = !CheckboxChoices[i].checked;
+	        else 
+	            //value为1是则全选,为0时则全不选
+	            CheckboxChoices[i].checked = value;
+	}
+
+	//获取复选框的值	
+	function getSelect(){
+		var myform = document.forms["MyForm"];
+	    var CheckboxChoices = myform.hoboy;
+	    /*
+	    //用字符串实现------末尾会多出一个逗号
+	    var arrayCheckbox = "";
+	    for(var i=0;i<CheckboxChoices.length;i++){
+	        if(CheckboxChoices[i].checked)
+	        	arrayCheckbox += CheckboxChoices[i].value+",";
+	    }
+	    alert(arrayCheckbox);
+	    */
+
+	    //用数组实现
+	    var arrayCheckbox = new Array();
+	    for(var i=0;i<CheckboxChoices.length;i++){
+	        if(CheckboxChoices[i].checked)
+	        	arrayCheckbox.push(CheckboxChoices[i].value);
+	    }
+	    alert(arrayCheckbox);
+
+	}
+
+
+	<script language="javascript">
+    //获取选中的下拉列表值
+    function getSelectValue(myselect){
+        var myform = document.forms["MyForm"];
+        
+		//elements：获取以源顺序排列的给定表单中所有控件的集合(也可以name属性获取控件)。但是<input  type="image" > 对象不在此集合内。
+        var select = myform.elements[myselect];
+        //判断是单选还是多选
+        if(select.type == "selece-one"){
+            var oneChoice = select.selectedIndex;//获取选中项
+            alert("单选" + select.options[oneChoice].value);//获取选中项的值
+        }
+        else{
+            var multiChoices = new Array();
+            //遍历整个下拉菜单
+            for(var i=0;i<select.options.length;i++)
+                if(select.options[i].selected)//如果被选中
+                    //选中项的值压入到数组中
+                    multiChoices.push(select.options[i].value);
+            //输出结果
+            alert("多选" + multiChoices);
+        }
+    }
+</script>
+</html>
+
+
+
+
+
+
